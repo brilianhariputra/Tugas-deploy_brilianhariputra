@@ -83,4 +83,10 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true
+"extra" {
+    "laravel": {
+        "dont-discover": [
+            "nunomaduro/collision"
+        ]
+    }
 }
