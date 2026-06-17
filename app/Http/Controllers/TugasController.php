@@ -8,10 +8,8 @@ class TugasController extends Controller
 {
     public function index()
     {
-        // Mengambil data
-        $data = DB::table('tugas')->get();
-
-        // Mengirim ke view
-        return view('tugas.index', ['tugas' => $data]);
+        // Debugging: Kita pastikan controller dipanggil
+        // Jika berhasil, Anda akan melihat teks ini, bukan halaman Laravel
+        return "Controller TugasController berhasil dipanggil!";
     }
 }
