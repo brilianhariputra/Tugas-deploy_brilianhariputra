@@ -22,5 +22,8 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
-bootstrap/cache/config.php
-bootstrap/cache/routes-v7.php
+# Pastikan folder bootstrap tetap terunggah
+!bootstrap/
+# Tetapi abaikan file cache di dalamnya
+bootstrap/cache/*
+!bootstrap/cache/.gitignore
