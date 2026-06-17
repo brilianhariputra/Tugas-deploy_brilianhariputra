@@ -1,15 +1,8 @@
 <?php
-define('LARAVEL_START', microtime(true));
-require dirname(__DIR__) . '/vendor/autoload.php';
-$app = require dirname(__DIR__) . '/bootstrap/app.php';
-$kernel = $app->make(\Illuminate\Contracts\Http\Kernel::class);
-$kernel->handle(\Illuminate\Http\Request::capture())->send();
-<?php
 
-// Arahkan ke file index.php milik Laravel di folder public
-require __DIR__ . '/../public/index.php';
-<?php
-// JANGAN hapus kode ini, kita tambah output untuk debug
-echo "Debug: API Index dipanggil!"; 
+// Tampilkan error agar kita tahu jika ada masalah
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
+// Panggil file index.php Laravel yang asli
 require __DIR__ . '/../public/index.php';

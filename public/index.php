@@ -1,20 +1,28 @@
 <?php
+// Paksa tampilkan error untuk debugging
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-use Illuminate\Foundation\Application;
+// Mencegah error akses file di Vercel
+putenv('CACHE_DRIVER=array');
+putenv('SESSION_DRIVER=array');
+putenv('VIEW_COMPILED_PATH=/tmp');
+
+use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
-// Determine if the application is in maintenance mode...
-if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
-    require $maintenance;
-}
+require __DIR__ . '/../vendor/autoload.php';
 
-// Register the Composer autoloader...
-require __DIR__.'/../vendor/autoload.php';
+$app = require_once __DIR__ . '/../bootstrap/app.php';
 
-// Bootstrap Laravel and handle the request...
-/** @var Application $app */
-$app = require_once __DIR__.'/../bootstrap/app.php';
+$kernel = $app->make(Kernel::class);
 
-$app->handleRequest(Request::capture());
+$response = $kernel->handle(
+    $request = Request::capture()
+);
+
+$response->send();
+
+$kernel->terminate($request, $response);
