@@ -105,14 +105,6 @@
     ),
     'rehash_on_login' => true,
   ),
-  'view' => 
-  array (
-    'paths' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\Tugas deploy_brilianhariputra\\resources\\views',
-    ),
-    'compiled' => 'C:\\xampp\\htdocs\\Tugas deploy_brilianhariputra\\storage\\framework\\views',
-  ),
   'app' => 
   array (
     'name' => 'Laravel',
@@ -801,6 +793,14 @@
     'http_only' => true,
     'same_site' => 'lax',
     'partitioned' => false,
+  ),
+  'view' => 
+  array (
+    'paths' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\Tugas deploy_brilianhariputra\\resources\\views',
+    ),
+    'compiled' => '/tmp',
   ),
   'tinker' => 
   array (
