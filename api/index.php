@@ -8,3 +8,8 @@ $kernel->handle(\Illuminate\Http\Request::capture())->send();
 
 // Arahkan ke file index.php milik Laravel di folder public
 require __DIR__ . '/../public/index.php';
+<?php
+// JANGAN hapus kode ini, kita tambah output untuk debug
+echo "Debug: API Index dipanggil!"; 
+
+require __DIR__ . '/../public/index.php';
