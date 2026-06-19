@@ -21,14 +21,14 @@
             <h1 class="text-3xl font-bold text-gray-800 mb-8">Dashboard Absensi Santri</h1>
 
             <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
-                <h3 class="font-bold text-lg mb-4">Tambah Data Absensi</h3>
-                <form action="/" method="POST" class="flex gap-4">
-                    @csrf
-                    <input name="nama" placeholder="Nama Lengkap" class="border p-2 rounded w-1/3" required>
-                    <input name="kelas" placeholder="Kelas" class="border p-2 rounded w-1/3" required>
-                    <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Simpan Data</button>
-                </form>
-            </div>
+    <h3 class="font-bold text-lg mb-4">Tambah Data Absensi</h3>
+    <form action="{{ url('/absensi/simpan') }}" method="POST" class="flex gap-4">
+        @csrf
+        <input type="text" name="nama" placeholder="Nama Lengkap" class="border p-2 rounded w-1/3" required>
+        <input type="text" name="kelas" placeholder="Kelas" class="border p-2 rounded w-1/3" required>
+        <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Simpan Data</button>
+    </form>
+</div>
 
             <div class="bg-white rounded-lg shadow-sm overflow-hidden">
                 <table class="w-full text-left">
