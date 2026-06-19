@@ -6,6 +6,6 @@ return [
         resource_path('views'),
     ],
 
-    'compiled' => '/tmp',
+    'compiled' => env('VIEW_COMPILED_PATH', base_path('storage/framework/views')),
 
 ];
