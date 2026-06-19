@@ -1,6 +1,16 @@
 <?php
-// Menggunakan __DIR__ untuk mencari root project dengan tepat
-// Kita naik 1 tingkat dari /api ke root, lalu masuk ke /public/index.php
-<?php
-// Pastikan ini memanggil file public/index.php dengan benar
-require_once __DIR__ . '/../public/index.php';
+// Tampilkan isi direktori saat ini (Vercel Root)
+echo "<h1>Isi Direktori Root:</h1><pre>";
+print_r(scandir(__DIR__ . '/..'));
+echo "</pre>";
+
+// Tampilkan isi folder bootstrap jika ada
+$bootstrapPath = __DIR__ . '/../bootstrap';
+if (is_dir($bootstrapPath)) {
+    echo "<h1>Isi Folder Bootstrap:</h1><pre>";
+    print_r(scandir($bootstrapPath));
+    echo "</pre>";
+} else {
+    echo "<h1>Folder Bootstrap TIDAK DITEMUKAN di: $bootstrapPath</h1>";
+}
+exit;
