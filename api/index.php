@@ -1,4 +1,6 @@
 <?php
+// Mencegah error terkait path
+chdir(__DIR__ . '/..');
 
-// Arahkan request ke file public/index.php milik Laravel
+// Jalankan Laravel
 require __DIR__ . '/../public/index.php';
