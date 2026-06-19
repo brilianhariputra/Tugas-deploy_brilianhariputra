@@ -8,17 +8,17 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('santris', function (Blueprint \) {
+        Schema::table('santris', function (Blueprint $table) {
             if (!Schema::hasColumn('santris', 'status')) {
-                \->string('status')->default('Hadir');
+                $table->string('status')->default('Hadir');
             }
         });
     }
 
     public function down(): void
     {
-        Schema::table('santris', function (Blueprint \) {
-            \->dropColumn('status');
+        Schema::table('santris', function (Blueprint $table) {
+            $table->dropColumn('status');
         });
     }
 };
