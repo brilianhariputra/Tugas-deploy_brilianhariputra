@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Santri extends Model
 {
-    //
+    protected $fillable = [
+        'nama',
+        'kelas',
+        'status',
+    ];
 }
