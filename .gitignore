@@ -27,3 +27,6 @@ Thumbs.db
 # Tetapi abaikan file cache di dalamnya
 bootstrap/cache/*
 !bootstrap/cache/.gitignore
+# Tambahkan ini di bagian bawah file .gitignore Anda
+database/*.sqlite
+database/*.sqlite-journal
