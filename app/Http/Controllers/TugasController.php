@@ -1,15 +1,31 @@
-public function store(Request $request)
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Santri;
+use Illuminate\Http\Request;
+
+class TugasController extends Controller
 {
-    $request->validate([
-        'nama' => 'required|string|max:255',
-        'kelas' => 'required|string|max:100',
-    ]);
+    public function index()
+    {
+        $santris = Santri::latest()->get();
+        return view('tugas', compact('santris'));
+    }
 
-    \App\Models\Santri::create([
-        'nama'  => $request->nama,
-        'kelas' => $request->kelas,
-        'status' => 'Hadir', 
-    ]);
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'kelas' => 'required|string|max:100',
+        ]);
 
-    return redirect()->route('absensi.index')->with('success', 'Data berhasil!');
+        Santri::create([
+            'nama'  => $request->nama,
+            'kelas' => $request->kelas,
+            'status' => 'Hadir',
+        ]);
+
+        return redirect()->route('absensi.index')->with('success', 'Data berhasil!');
+    }
 }
