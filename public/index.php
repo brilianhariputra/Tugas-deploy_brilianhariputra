@@ -1,4 +1,11 @@
 <?php
+// Paksa PHP menampilkan semua jenis error
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Tambahkan tes ini untuk memastikan file terbaca
+echo "PHP Sedang Berjalan! ";
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
